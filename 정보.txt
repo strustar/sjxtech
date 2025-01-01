@@ -18,7 +18,8 @@ git commit -m "어떤 것을 변경했는지 메시지 작성"
 git push
 
 
-`npm run build`는 Next.js 프로젝트를 배포하기 위한 최적화된 버전으로 빌드(컴파일)하는 명령어입니다.
+npm run build
+vercel --prod
 
 쉽게 설명하면:
 1. **개발 모드** (`npm run dev`)
