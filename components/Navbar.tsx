@@ -10,7 +10,7 @@ const NAV_ITEMS = [
   { href: '/about', label: 'AI/앱 종합관' },
   // { href: '/company', label: '회사소개' },
   // { href: '/products', label: '제품/서비스' },
-  // { href: '/dashboard', label: '대시보드' },
+  { href: '/dashboard', label: '대시보드' },
   // { href: '/contact', label: '문의하기' },
 ]
 
