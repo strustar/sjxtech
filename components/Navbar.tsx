@@ -7,7 +7,7 @@ import ThemeToggle from '@/components/ThemeToggle'
 // 메뉴 항목 배열
 const NAV_ITEMS = [
   { href: '/', label: '홈' },
-  { href: '/about', label: 'AI/앱 종합관' },
+  // { href: '/about', label: 'AI/앱 종합관' },
   // { href: '/company', label: '회사소개' },
   // { href: '/products', label: '제품/서비스' },
   { href: '/dashboard', label: '대시보드' },
