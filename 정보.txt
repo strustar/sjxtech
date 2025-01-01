@@ -1,0 +1,404 @@
+깃으로 자동 배표
+1. 최초 설정 (처음 한 번만)
+# 1) GitHub에서 새 저장소 만들기
+- GitHub.com 접속 → '+' 버튼 → New repository
+
+# 2) 로컬 프로젝트 폴더에서
+git init
+git remote add origin https://github.com/strustar/my-website.git
+
+
+2. 일상적인 코드 관리 (수정할 때마다)
+# 1) 변경사항 확인
+git status
+
+# 2) 변경사항 저장하기
+git add .
+git commit -m "어떤 것을 변경했는지 메시지 작성"
+git push
+
+
+📌 Next.js 프로젝트 개발 가이드
+
+1. 프로젝트 생성
+-------------------------------
+npx create-next-app@latest my-website --typescript --tailwind --eslint
+cd my-website
+
+2. 기본 설정
+-------------------------------
+npm install               # 기본 패키지 설치
+npm install 필요한패키지  # 추가 패키지 설치 (예: react-icons, axios 등)
+
+3. 개발 과정
+-------------------------------
+npm run dev              # 개발 서버 실행 (http://localhost:3000)
+- pages/ 폴더에 페이지 생성
+- components/ 폴더에 컴포넌트 생성
+- styles/ 폴더에 스타일 작성
+- public/ 폴더에 이미지 등 정적 파일 저장
+
+4. 코드 점검
+-------------------------------
+npm run lint             # 코드 문법 검사
+npm run build           # 빌드 테스트
+
+5. 로컬 테스트
+-------------------------------
+npm run build           # 프로덕션용 빌드
+npm run start          # 빌드된 버전 로컬에서 테스트
+
+6. Vercel 배포
+-------------------------------
+vercel                  # 개발 버전 배포 (테스트용)
+vercel --prod          # 프로덕션 버전 배포 (실제 서비스)
+
+7. 문제 해결 (필요시)
+-------------------------------
+# 의존성 clean install
+rd /s /q node_modules   # Windows
+rm -rf node_modules    # Mac/Linux
+del package-lock.json  # Windows
+rm package-lock.json   # Mac/Linux
+npm install
+
+8. 주요 폴더 구조
+-------------------------------
+my-website/
+  ├── pages/           # 페이지 파일들
+  ├── components/      # 재사용 컴포넌트
+  ├── public/          # 정적 파일 (이미지 등)
+  ├── styles/          # CSS 파일들
+  ├── .env            # 환경 변수
+  └── package.json    # 프로젝트 설정
+
+9. 자주 쓰는 Git 명령어
+-------------------------------
+git init              # Git 저장소 초기화
+git add .             # 모든 변경사항 스테이징
+git commit -m "메시지" # 변경사항 커밋
+git push             # 원격 저장소에 푸시
+
+🔍 유용한 링크
+-------------------------------
+- Next.js 공식 문서: https://nextjs.org/docs
+- Vercel 대시보드: https://vercel.com/dashboard
+- Tailwind 문서: https://tailwindcss.com/docs
+
+
+my-daewoo-enc/
+├── components/
+│   ├── Layout.js         # 전체 레이아웃
+│   ├── Header.js         # 상단 메뉴
+│   ├── Sidebar.js        # 사이드바 (필요 시)
+│   └── Footer.js         # 하단 정보
+├── pages/
+│   ├── index.js          # 홈 페이지
+│   ├── about.js          # 회사 소개
+│   ├── business.js       # 사업 분야
+│   ├── investor.js       # 투자 정보
+│   ├── sustainability.js # 지속가능경영
+│   ├── pr.js             # 홍보 센터
+│   └── customer.js        # 고객 센터
+├── public/
+│   └── images/           # 이미지 파일 저장
+│       └── logo.png      # 대우건설 로고
+├── styles/
+│   ├── globals.css       # 전역 스타일
+│   └── Home.module.css   # 각 페이지별 스타일 (필요 시)
+└── ...
+
+my-daewoo-enc/
+├── components/                        # 재사용 가능한 컴포넌트
+│   ├── layout/                       # 레이아웃 관련 컴포넌트
+│   │   ├── Layout.tsx               # 전체 레이아웃 래퍼
+│   │   ├── Navbar.tsx               # 상단 네비게이션 바
+│   │   ├── Footer.tsx               # 하단 푸터
+│   │   └── Sidebar.tsx              # 사이드 메뉴
+│   │
+│   ├── common/                       # 공통 UI 컴포넌트
+│   │   ├── Button.tsx               # 버튼 컴포넌트
+│   │   ├── Card.tsx                 # 카드 컴포넌트
+│   │   ├── Input.tsx                # 입력 필드
+│   │   ├── Modal.tsx                # 모달 다이얼로그
+│   │   └── Loading.tsx              # 로딩 스피너
+│   │
+│   ├── home/                         # 홈페이지 전용 컴포넌트
+│   │   ├── Hero.tsx                 # 히어로 섹션
+│   │   ├── BusinessSection.tsx      # 사업 영역 섹션
+│   │   └── NewsSection.tsx          # 뉴스 섹션
+│   │
+│   └── business/                     # 사업 소개 페이지 컴포넌트
+│       ├── ProjectCard.tsx          # 프로젝트 카드
+│       └── BusinessOverview.tsx     # 사업 개요
+│
+├── pages/                            # 페이지 컴포넌트
+│   ├── index.tsx                    # 홈페이지
+│   │
+│   ├── about/                       # 회사 소개 섹션
+│   │   ├── index.tsx               # 회사 소개 메인
+│   │   ├── history.tsx             # 연혁
+│   │   ├── management.tsx          # 경영진 소개
+│   │   └── vision.tsx              # 비전
+│   │
+│   ├── business/                    # 사업 영역 섹션
+│   │   ├── index.tsx               # 사업 영역 메인
+│   │   ├── construction.tsx        # 건축 사업
+│   │   ├── civil.tsx               # 토목 사업
+│   │   └── plant.tsx               # 플랜트 사업
+│   │
+│   └── contact/                     # 고객 지원 섹션
+│       ├── index.tsx               # 문의하기 메인
+│       └── faq.tsx                 # 자주 묻는 질문
+│
+├── styles/                           # 스타일 파일
+│   ├── globals.css                  # 전역 스타일
+│   └── components/                  # 컴포넌트별 스타일
+│       ├── Button.css              # 버튼 스타일
+│       └── Card.css                # 카드 스타일
+│
+├── public/                           # 정적 파일
+│   ├── images/                      # 이미지 파일
+│   │   ├── logo/                   # 로고 이미지
+│   │   ├── heroes/                 # 히어로 섹션 이미지
+│   │   └── projects/               # 프로젝트 이미지
+│   │
+│   └── fonts/                       # 웹폰트 파일
+│
+├── lib/                              # 유틸리티 함수
+│   ├── api/                         # API 관련 유틸리티
+│   │   ├── client.ts               # API 클라이언트
+│   │   └── endpoints.ts            # API 엔드포인트 정의
+│   │
+│   └── utils/                       # 일반 유틸리티
+│       ├── date.ts                 # 날짜 관련 함수
+│       └── format.ts               # 포맷팅 함수
+│
+├── hooks/                            # 커스텀 React 훅
+│   ├── useMedia.ts                 # 미디어 쿼리 훅
+│   └── useScroll.ts                # 스크롤 관련 훅
+│
+└── config/                           # 설정 파일
+    ├── menu.ts                      # 메뉴 구조 설정
+    └── constants.ts                 # 상수 정의
+
+
+
+my-daewoo-enc/
+├── .git/                      # [자동생성] Git 버전 관리 폴더 - 직접 수정 금지
+│
+├── .next/                     # [자동생성] Next.js 빌드 출력 - 직접 수정 금지
+│   ├── cache/                # [자동생성] 빌드 캐시
+│   ├── server/               # [자동생성] 서버 사이드 렌더링 파일
+│   ├── static/               # [자동생성] 정적 파일 최적화 버전
+│   └── types/                # [자동생성] 타입 정의 파일
+│
+├── .vercel/                   # [자동생성] Vercel 배포 설정 - 직접 수정 금지
+│   └── project.json          # [자동생성] Vercel 프로젝트 설정
+│
+├── node_modules/              # [자동생성] npm 패키지 - 직접 수정 금지
+│
+├── components/                # [수정가능] 커스텀 컴포넌트
+│   ├── Layout.tsx            
+│   ├── Navbar.tsx            
+│   └── ...                   
+│
+├── pages/                     # [수정가능] Next.js 페이지
+│   ├── _app.tsx              # [주의] 앱 설정 - 신중히 수정
+│   ├── _document.tsx         # [주의] HTML 문서 설정 - 신중히 수정
+│   └── ...                   
+│
+├── public/                    # [수정가능] 정적 파일
+│   ├── favicon.ico           
+│   └── images/               
+│
+├── styles/                    # [수정가능] 스타일 파일
+│   ├── globals.css           
+│   └── tailwind.css          
+│
+├── .eslintrc.json            # [수정가능] ESLint 설정
+├── .gitignore                # [수정가능] Git 제외 파일 설정
+├── .env                      # [수정가능] 환경 변수
+├── .env.local                # [수정가능] 로컬 환경 변수
+│
+├── package.json              # [주의] 프로젝트 설정 - 신중히 수정
+├── package-lock.json         # [자동생성] 의존성 잠금 파일 - 직접 수정 금지
+│
+├── next.config.js            # [수정가능] Next.js 설정
+├── tailwind.config.js        # [수정가능] Tailwind 설정
+├── postcss.config.js         # [수정가능] PostCSS 설정
+└── tsconfig.json             # [수정가능] TypeScript 설정
+
+# 자동 생성되는 파일/폴더 (수정 금지)
+1. .next/
+   - Next.js가 빌드 시 자동 생성
+   - 모든 하위 파일/폴더 수정 금지
+   - 문제 발생 시 'npm run build' 로 재생성
+
+2. node_modules/
+   - npm install 시 자동 생성
+   - 수동 수정 절대 금지
+   - 패키지 변경은 package.json으로만 관리
+
+3. package-lock.json
+   - npm이 자동 관리하는 의존성 잠금 파일
+   - 수동 수정 시 의존성 충돌 위험
+
+4. .vercel/
+   - Vercel 배포 시 자동 생성
+   - 배포 설정 관련 파일 포함
+
+5. .git/
+   - Git이 자동 관리하는 버전 관리 폴더
+   - 직접 수정 시 레포지토리 손상 위험
+
+# 주의가 필요한 파일 (신중히 수정)
+1. _app.tsx, _document.tsx
+   - Next.js의 핵심 설정 파일
+   - 잘못된 수정 시 앱 전체에 영향
+
+2. package.json
+   - 프로젝트 의존성 및 스크립트 정의
+   - 잘못된 수정 시 빌드/실행 오류 가능
+
+3. next.config.js
+   - Next.js 고급 설정
+   - 웹팩, 환경 변수 등 중요 설정 포함
+
+# 자유롭게 수정 가능한 파일/폴더
+1. components/
+   - 커스텀 React 컴포넌트
+   - 자유롭게 생성/수정 가능
+
+2. pages/ (단, _app.tsx, _document.tsx 제외)
+   - 페이지 컴포넌트
+   - 라우팅 구조에 따라 자유롭게 구성
+
+3. public/
+   - 정적 파일 보관
+   - 이미지, 폰트 등 자유롭게 관리
+
+4. styles/
+   - CSS 스타일 파일
+   - 자유롭게 스타일 정의 가능
+
+
+// 1. Spacing (여백) 유틸리티
+{
+  // Padding (내부 여백)
+  'p-{size}': 'padding: {size}',           // 모든 방향
+  'px-{size}': 'padding-left/right: {size}', // 좌우
+  'py-{size}': 'padding-top/bottom: {size}', // 상하
+  'pt-{size}': 'padding-top: {size}',      // 위
+  'pr-{size}': 'padding-right: {size}',    // 오른쪽
+  'pb-{size}': 'padding-bottom: {size}',   // 아래
+  'pl-{size}': 'padding-left: {size}',     // 왼쪽
+
+  // size 옵션들
+  '0': '0px',
+  '1': '0.25rem', // 4px
+  '2': '0.5rem',  // 8px
+  '3': '0.75rem', // 12px
+  '4': '1rem',    // 16px
+  '5': '1.25rem', // 20px
+  '6': '1.5rem',  // 24px
+  // ...계속
+}
+
+// 2. Colors (색상) 유틸리티
+{
+  // Background Colors
+  'bg-{color}-{shade}': 'background-color: {value}',
+  // 예시
+  'bg-blue-500': '#3B82F6',
+  'bg-red-500': '#EF4444',
+  'bg-green-500': '#10B981',
+
+  // Text Colors
+  'text-{color}-{shade}': 'color: {value}',
+  // 예시
+  'text-white': '#FFFFFF',
+  'text-black': '#000000',
+  'text-gray-500': '#6B7280'
+}
+
+// 3. Size (크기) 유틸리티
+{
+  // Width
+  'w-{size}': 'width: {size}',
+  // 예시
+  'w-full': 'width: 100%',
+  'w-1/2': 'width: 50%',
+  'w-1/3': 'width: 33.333333%',
+  
+  // Height
+  'h-{size}': 'height: {size}',
+  // 예시
+  'h-screen': 'height: 100vh',
+  'h-full': 'height: 100%',
+}
+
+// 4. Border (테두리) 유틸리티
+{
+  // Border Radius
+  'rounded': 'border-radius: 0.25rem',
+  'rounded-lg': 'border-radius: 0.5rem',
+  'rounded-full': 'border-radius: 9999px',
+  
+  // Border Width
+  'border': 'border-width: 1px',
+  'border-2': 'border-width: 2px',
+  'border-4': 'border-width: 4px',
+}
+
+// 5. Typography (텍스트) 유틸리티
+{
+  // Font Size
+  'text-xs': 'font-size: 0.75rem',
+  'text-sm': 'font-size: 0.875rem',
+  'text-base': 'font-size: 1rem',
+  'text-lg': 'font-size: 1.125rem',
+  'text-xl': 'font-size: 1.25rem',
+  
+  // Font Weight
+  'font-thin': 'font-weight: 100',
+  'font-normal': 'font-weight: 400',
+  'font-bold': 'font-weight: 700',
+}
+
+// 6. Flexbox & Grid 유틸리티
+{
+  // Flex
+  'flex': 'display: flex',
+  'flex-row': 'flex-direction: row',
+  'flex-col': 'flex-direction: column',
+  
+  // Justify Content
+  'justify-start': 'justify-content: flex-start',
+  'justify-center': 'justify-content: center',
+  'justify-between': 'justify-content: space-between',
+  
+  // Align Items
+  'items-start': 'align-items: flex-start',
+  'items-center': 'align-items: center',
+  'items-end': 'align-items: flex-end',
+}
+
+// 7. 반응형 프리픽스
+{
+  'sm:': '@media (min-width: 640px)',
+  'md:': '@media (min-width: 768px)',
+  'lg:': '@media (min-width: 1024px)',
+  'xl:': '@media (min-width: 1280px)',
+  '2xl:': '@media (min-width: 1536px)',
+}
+
+// 예시 해석:
+// "px-4 py-2 bg-blue-500 text-white rounded-lg"
+{
+  'px-4': 'padding-left: 1rem; padding-right: 1rem;',
+  'py-2': 'padding-top: 0.5rem; padding-bottom: 0.5rem;',
+  'bg-blue-500': 'background-color: #3B82F6;',
+  'text-white': 'color: #FFFFFF;',
+  'rounded-lg': 'border-radius: 0.5rem;'
+}   
