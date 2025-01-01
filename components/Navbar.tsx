@@ -7,7 +7,8 @@ import ThemeToggle from '@/components/ThemeToggle'
 // 메뉴 항목 배열
 const NAV_ITEMS = [
   { href: '/', label: '홈' },
-  { href: '/about', label: 'AI/앱 종합관' },
+  { href: '/aiTools', label: 'AI 도구 종합관' },
+  { href: '/appGallery', label: 'App Gallery' },
   // { href: '/company', label: '회사소개' },
   // { href: '/products', label: '제품/서비스' },
   // { href: '/dashboard', label: '대시보드' },
@@ -52,7 +53,7 @@ const Navbar = () => {
           </span>
         </div>
 
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-8">
           {NAV_ITEMS.map((item) => (
             <Link key={item.href} href={item.href} className={getLinkClassName(item.href)}>
               {item.label}
