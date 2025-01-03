@@ -1,56 +1,56 @@
 /* styles/globals.css */
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 루트 변수 정의 */
+:root {
+  /* 레이아웃 너비 */
+  --width-max: 1400px;     /* 최대 너비 */
+  --width-content: 1200px; /* 컨텐츠 영역 */
+  --width-small: 1000px;   /* 작은 컨텐츠 */
+}
+
+/* 기본 스타일 */
 body {
-  @apply bg-[#1b1f24];
+  @apply bg-[#2a3a33] text-orange-500 !important;
 }
 
+/* 레이아웃 클래스 */
 .layout-width {
-  /* max-width: 1400px; */
-  margin: 0 auto;
+  max-width: var(--width-max);
+  @apply mx-auto;
 }
 
+/* Slick 슬라이더 커스텀 */
 .slick-slide {
-  display: flex !important;
-  justify-content: center;
+  @apply flex justify-center !important;
 }
 
 .slick-track {
-  display: flex !important;
-  align-items: center;
+  @apply flex items-center !important;
 }
 
-/* 전역 변수 설정 */
-:root {
-  /* 레이아웃 - 너비 */
-  --width-max: 1400px;      /* 페이지 최대 너비 */
-  --width-content: 1200px;  /* 컨텐츠 영역 너비 */
-  --width-small: 1000px;    /* 작은 컨텐츠 너비 */
+/* 사용자 정의 컴포넌트 */
+@layer components {
+  /* 제목 */
+  .user-text1 { @apply text-center text-5xl font-bold text-white mb-6 tracking-tight; }
+  .user-text2 { @apply text-center text-3xl font-semibold text-orange-400 mb-2; }
   
-  /* 레이아웃 - 여백 */
-  --spacing-xs: 0.5rem;     /* 8px */
-  --spacing-sm: 1rem;       /* 16px */
-  --spacing-md: 1.5rem;     /* 24px */
-  --spacing-lg: 2rem;       /* 32px */
-  --spacing-xl: 3rem;       /* 48px */
- 
-  /* 색상 */
-  --color-bg: #1b1f24;                  /* 배경색 */
-  --color-divider: rgba(31,41,55,0.3);  /* 구분선 */
-  --color-text: #ffffff;                 /* 기본 텍스트 */
-  --color-text-muted: #9ca3af;          /* 흐린 텍스트 */
-  --color-primary: #3b82f6;             /* 주요 강조색 */
- 
-  /* 둥근 모서리 */
-  --radius-sm: 0.25rem;    /* 4px */
-  --radius-md: 0.5rem;     /* 8px */
-  --radius-lg: 1rem;       /* 16px */
- 
-  /* 그림자 */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
- }
+  /* 배경 */
+  .user-bg1 { @apply min-h-screen bg-gray-950/30; }
+  
+  
+  /* 카드 */
+  .user-card {
+    @apply bg-[#161b22] rounded-xl overflow-hidden 
+          hover:ring-1 hover:ring-blue-500 
+          transition-all;
+  }
+  
+  /* 컨테이너 */
+  .user-container {
+    @apply max-w-6xl mx-auto p-8 md:p-12;
+  }
+  
+}

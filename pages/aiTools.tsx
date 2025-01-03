@@ -2,9 +2,9 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { ExternalLink } from 'lucide-react';
-import { getAIToolsData } from '../utils/data';
+import { getDataAI } from '../utils/dataAI';
 
-const aiContentData = getAIToolsData();
+const aiContentData = getDataAI();
 
 type AICardProps = {
   item: {
@@ -98,11 +98,11 @@ type CategorySectionProps = {
 };
 
 const CategorySection: React.FC<CategorySectionProps> = ({ title, items }) => (
-  <div className="mb-16">
+  <div className="mb-2">
     <h2 className="text-3xl font-bold text-green-500 mb-4">
       {title}
     </h2>
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-gray-900/30 p-4 rounded-lg border border-gray-700/50 hover:border-red-500/50 transition-all duration-300">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 bg-gray-900/30 p-4 rounded-lg border border-gray-700/50 hover:border-red-500/90 transition-all duration-300">
       {items.map((item, index) => (
         <AICard key={index} item={item} />
       ))}
@@ -112,19 +112,20 @@ const CategorySection: React.FC<CategorySectionProps> = ({ title, items }) => (
 
 export default function AiApp() {
   return (
-    <div className="min-h-screen bg-gray-1000/90">
+    <div className="user-bg1">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-6 tracking-tight">AI 도구 모음</h1>
-          <p className="text-3xl font-semibold text-orange-400 mb-4">혁신적인 AI 도구들을 만나보세요</p>
-          <p className="text-gray-400 max-w-2xl mx-auto">
+          <h1 className="user-text1"> AI 도구 모음 </h1>
+          <p className="user-text2 mb-4"> 혁신적인 AI 도구들을 만나보세요 </p>
+          <p className="text-gray-900 max-w-2xl mx-auto">
             최신 AI 기술을 활용한 다양한 도구들을 한눈에 확인하고 사용해보세요
           </p>
         </div>
         <CategorySection title="AI 챗봇" items={aiContentData.chatbots} />
         <CategorySection title="비디오 생성 AI" items={aiContentData.videoAI} />
-        <CategorySection title="PPT 생성 AI" items={aiContentData.presentationAI} />
         <CategorySection title="이미지 생성 AI" items={aiContentData.imageAI} />
+        <CategorySection title="PPT 생성 AI" items={aiContentData.presentationAI} />
+        <CategorySection title="기타 AI" items={aiContentData.etcAI} />
       </div>
     </div>
   );
