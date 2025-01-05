@@ -9,7 +9,7 @@ import { getContentData } from '../utils/data';
 const contentData = getContentData();
 
 const InfoSection = ({ title, messages }: { title: string; messages: string[] }) => (
-  <div className="bg-gray-950/50 p-6 rounded-lg border border-gray-900/80">
+  <div className="p-6 rounded-lg border border-gray-900/80">
     <h2 className="text-2xl font-bold text-blue-400 mb-4">{title}</h2>
     {messages.map((message, index) => (
       <p
@@ -87,19 +87,17 @@ const VideoSection = ({ video }: { video: typeof contentData.videos[0] }) => (
 
 export default function Home() {
   return (
-    <div className="user-bg1">
-      <div className="max-w-7xl mx-auto py-12">
-        <h1 className="user-text1"> AI로 기술의 한계를 넘어 </h1>
-        <p className="user-text2 pb-8"> 새로운 가능성을 열다 </p>
-          
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
-          {contentData.sections.map((section, index) => (
-            <InfoSection key={index} title={section.title} messages={section.messages} />
-          ))}
-        </div>
+    <div className="max-w-xl md:max-w-7xl mx-auto py-12">      
+      <h1 className="user-text1"> AI로 기술의 한계를 넘어 </h1>
+      <p className="user-text2 pb-8"> 새로운 가능성을 열다 </p>
+              
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-2">
+        {contentData.sections.map((section, index) => (
+          <InfoSection key={index} title={section.title} messages={section.messages} />
+        ))}      
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-2">
+      <div className="py-12">
         <Slider {...contentData.sliderSettings}>
           {contentData.images.map((image, index) => (
             <ImageSlide key={index} image={image} />

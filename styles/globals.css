@@ -12,24 +12,14 @@
 }
 
 /* 기본 스타일 */
-body {
-  @apply bg-[#2a3a33] text-orange-500 !important;
-}
+body { @apply bg-[#2a3a33] text-orange-500 !important; }
 
 /* 레이아웃 클래스 */
-.layout-width {
-  max-width: var(--width-max);
-  @apply mx-auto;
-}
+.layout-width { max-width: var(--width-max); @apply mx-auto; }
 
 /* Slick 슬라이더 커스텀 */
-.slick-slide {
-  @apply flex justify-center !important;
-}
-
-.slick-track {
-  @apply flex items-center !important;
-}
+.slick-slide { @apply flex justify-center !important; }
+.slick-track { @apply flex items-center !important; }
 
 /* 사용자 정의 컴포넌트 */
 @layer components {
@@ -38,10 +28,9 @@ body {
   .user-text2 { @apply text-center text-3xl font-semibold text-orange-400 mb-2; }
   
   /* 배경 */
-  .user-bg1 { @apply min-h-screen bg-gray-950/30; }
+  .user-bg1 { @apply min-h-screen bg-gray-950/60; }
   
-  
-  /* 카드 */
+    /* 카드 */
   .user-card {
     @apply bg-[#161b22] rounded-xl overflow-hidden 
           hover:ring-1 hover:ring-blue-500 

@@ -4,6 +4,7 @@
     "react/jsx-no-comment-textnodes": "off",
     "react/no-unescaped-entities": "off",
     "@next/next/no-img-element": "off",
+    "@typescript-eslint/no-unused-vars": "off",    
     "no-multiple-empty-lines": [
       "error",
       {

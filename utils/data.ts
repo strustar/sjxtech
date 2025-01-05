@@ -13,10 +13,73 @@ export const getContentData = () => {
       arrows: true,
       className: 'center',
     },
-  
-  images: [
-    {
-      src: '/images/support.png',
+
+    designs: [
+      {
+        title: '보(Beam) 설계 자동화',
+        description: '• RC vs. FRP Concrete (설계 비교) •• 웹 기반 시각화',
+        url: 'https://beam-frp.streamlit.app/',
+        imageUrl: '/images/beam.png',
+      },
+      {
+        title: '기둥(Column) 설계 자동화',
+        description: '• RC vs. FRP Concrete (설계 비교) •• 웹 기반 시각화',
+        url: 'https://column.streamlit.app/',
+        imageUrl: '/images/column.png',
+      },
+      {
+        title: '시스템 동바리(비계) 설계 자동화',
+        description: '• 시스템 동바리(비계) 설계 검토 보고서 •• 3D 구조해석까지 30페이지 pdf 보고서 자동 생성',
+        url: 'https://support.streamlit.app/',
+        imageUrl: '/images/support.png',
+      },
+    ],
+
+    bids: [
+      {
+        title: '입찰 정보 검색',
+        description: '• 나라장터(조달청) 등 입찰정보 검색 •• 검색 정보 엑셀 저장 및 모든 자료 일괄 다운로드 기능 제공',
+        url: 'https://bidinfo.streamlit.app/',
+        imageUrl: '/images/bidSearch.png',
+      },
+      {
+        title: '입찰 공고문 분석',
+        description: '• 입찰 공고문 자동 분석, 특이 사항 분석 등 •• 당사 정보와 매칭 후 추천 입찰 정보 제공 가능',
+        url: 'https://kolontech.streamlit.app/',
+        imageUrl: '/images/bidFile.png',
+      },
+      {
+        title: '낙찰 금액 예측',
+        description: '• 낙찰 금액 예측, 낙찰 확률 10% 이상 상승 예측 가능 •• 과학적, 기술적, 통계적 분석 및 AI 예측',
+        url: 'https://bidtech.streamlit.app/',
+        imageUrl: '/images/bidPrice.png',
+      },
+    ],
+
+    etc: [
+      {
+        title: 'pdf 검색 (키워드 기반)',
+        description: '• 키워드 기반 pdf 내용 검색 •• 키워드 포함된 모든 문장 추출, 원본 데이터에 하이라이트 표시',
+        url: 'https://pdftech.streamlit.app/',
+        imageUrl: '/images/pdf.png',
+      },
+      {
+        title: '터널 최적 단면 자동화',
+        description: '• 터널 최적 단면 CAD 도면 자동 생성 •• 다양한 조건 입력 후 최적 단면 자동 생성',
+        url: 'https://tunneltech.streamlit.app/',
+        imageUrl: '/images/tunnel.png',
+      },
+      {
+        title: '손글씨 인식 자동화',
+        description: '• 터널 최적 단면 도면 자동 생성 •• 다양한 조건 입력 후 최적 단면 자동 생성',
+        url: 'https://cadtech.streamlit.app/',
+        imageUrl: '/images/hand.png',
+      },
+    ],
+
+    images: [
+      {
+        src: '/images/support.png',
       title: '시스템 동바리(비계) 설계 자동화',
       url: 'https://support.streamlit.app',
       description: '시스템 동바리(비계) 설계 검토 보고서',
