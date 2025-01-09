@@ -1,4 +1,19 @@
-깃으로 자동 배표
+# 기존 원격 저장소 확인
+git remote -v
+
+# 기존 원격 저장소 제거
+git remote remove origin
+
+# 새 원격 저장소 추가
+git remote add origin https://github.com/<new-username>/new-repo.git
+
+# 기본 브랜치 설정
+git branch -M main
+
+# 새 저장소로 푸시
+git push -u origin main
+
+
 1. 최초 설정 (처음 한 번만)
 # 1) GitHub에서 새 저장소 만들기
 - GitHub.com 접속 → '+' 버튼 → New repository
